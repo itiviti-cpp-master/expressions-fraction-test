@@ -259,14 +259,14 @@ TEST(FractionTest, compare_strict)
         EXPECT_FALSE(right < left);
     };
 
-    expectLess(Fraction(0), Fraction(1));
-    expectLess(Fraction(-1), Fraction(0));
-    expectLess(Fraction(2), Fraction(42));
-    expectLess(Fraction(-42), Fraction(42));
+    expectLess(0, 1);
+    expectLess(-1, 0);
+    expectLess(2, 42);
+    expectLess(-42, 42);
 
-    expectLess(0, Fraction(MAX_INT64));
-    expectLess(Fraction(MIN_INT64), 0);
-    expectLess(Fraction(MIN_INT64), Fraction(MAX_INT64));
+    expectLess(0, MAX_INT64);
+    expectLess(MIN_INT64, 0);
+    expectLess(MIN_INT64, MAX_INT64);
 
     expectLess(Fraction(1, 3), Fraction(1, 2));
     expectLess(Fraction(1, 2), Fraction(2, 3));
@@ -287,16 +287,16 @@ TEST(FractionTest, compare_non_strict)
         EXPECT_EQ(right <= left, left == right);
     };
 
-    expectLessEq(Fraction(0), Fraction(1));
-    expectLessEq(Fraction(-1), Fraction(0));
-    expectLessEq(Fraction(2), Fraction(42));
-    expectLessEq(Fraction(-42), Fraction(42));
+    expectLessEq(0, 1);
+    expectLessEq(-1, 0);
+    expectLessEq(2, 42);
+    expectLessEq(-42, 42);
 
-    expectLessEq(0, Fraction(MAX_INT64));
-    expectLessEq(Fraction(MIN_INT64), 0);
-    expectLessEq(Fraction(MIN_INT64), Fraction(MAX_INT64));
-    expectLessEq(Fraction(MIN_INT64), Fraction(MIN_INT64));
-    expectLessEq(Fraction(MAX_INT64), Fraction(MAX_INT64));
+    expectLessEq(0, MAX_INT64);
+    expectLessEq(MIN_INT64, 0);
+    expectLessEq(MIN_INT64, MAX_INT64);
+    expectLessEq(MIN_INT64, MIN_INT64);
+    expectLessEq(MAX_INT64, MAX_INT64);
 
     expectLessEq(Fraction(1, 3), Fraction(1, 2));
     expectLessEq(Fraction(1, 2), Fraction(2, 3));
