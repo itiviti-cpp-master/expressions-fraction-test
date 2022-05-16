@@ -11,7 +11,7 @@ static constexpr int64_t MAX_INT64 = std::numeric_limits<int64_t>::max();
 
 TEST(FractionTest, traits)
 {
-    EXPECT_EQ(sizeof(Fraction), sizeof(double) * 2);
+    EXPECT_EQ(sizeof(Fraction), sizeof(std::int64_t) * 2);
     EXPECT_TRUE(std::is_trivially_copyable_v<Fraction>);
 }
 
