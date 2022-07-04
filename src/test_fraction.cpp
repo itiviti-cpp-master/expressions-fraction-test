@@ -322,7 +322,7 @@ TEST(FractionTest, string)
 TEST(FractionTest, print)
 {
     static constexpr auto str = [](const Fraction & n) {
-        std::stringstream ss;
+        std::ostringstream ss;
         ss << n;
         return ss.str();
     };
